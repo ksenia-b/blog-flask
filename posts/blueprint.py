@@ -1,9 +1,18 @@
 from flask import Blueprint
 from flask import render_template
 from models import Post, Tag
+from .forms import PostForm
 from flask import request
 
 posts = Blueprint('posts', __name__, template_folder='templates')
+
+
+
+# http local host blog create
+@posts.route('/create')
+def create_post():
+    form = PostForm()
+    return render_template('/posts/create_post.html', form=form)
 
 @posts.route('/')
 def index():
