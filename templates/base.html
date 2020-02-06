@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
     <title>
         {% block title %}
         {% endblock %} | Flask app
@@ -24,7 +25,7 @@
       <li class="nav-item">
 <!--        <a class="nav-link" href="{{ url_for('posts.create_post') }}">New post</a>-->
           {% if current_user.has_role %}
-              <a href="/admin">Admin</a>
+              <a class="nav-link" href="/admin">Admin</a>
           {% endif %}
       </li>
 
